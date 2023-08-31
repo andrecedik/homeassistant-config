@@ -1,0 +1,24 @@
+cat_mode:
+  name: 'Cat mode'
+  initial: off
+  icon: mdi:cat
+guest_mode:
+  name: 'Guest mode'
+  initial: off
+  icon: mdi:bag-personal
+shutter_automation:
+  name: 'Shutter automation'
+  initial: on
+  icon: mdi:window-shutter-open
+shutter_cat_mode:
+  name: 'Shutter (cat mode)'
+  initial: on
+  icon: mdi:cat
+xmas_time:
+  name: 'Xmas time'
+  initial: off
+  icon: mdi:pine-tree
+vacation_mode:
+  name: 'Vacation mode'
+  initial: off
+  icon: mdi:palm-tree

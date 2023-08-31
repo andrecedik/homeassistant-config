@@ -1,0 +1,23 @@
+# Gitignore settings for Home Assistant
+
+# Of course we don't want to store secrest
+secrets.yaml
+
+# Logs
+*.log
+*.log.*
+
+# ZHA
+/zigbee.*
+
+# other stuff
+.cloud
+.HA_VERSION
+.storage
+
+*.db
+*.db-*
+*.xml
+/image/*
+
+#custom_components/

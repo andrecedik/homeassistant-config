@@ -1,0 +1,130 @@
+esphome:
+  name: upstairs-01
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  manual_ip:
+    static_ip: 192.168.1.116
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "u01p Fallback Hotspot"
+    password: !secret fallback_ap_password
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret upstairs_01_enc_key
+
+ota:
+  password: !secret api_password
+
+web_server:
+  port: 80
+
+time:
+  - platform: homeassistant
+
+esp32_ble_tracker:
+  scan_parameters:
+    interval: 1100ms
+    window: 1100ms
+    active: true
+
+bluetooth_proxy:
+
+sensor:
+  - platform: atc_mithermometer
+    mac_address: !secret atc_mithermometer_main_bedroom_mac_address
+    temperature:
+      name: "Main Bedroom Temperature"
+    humidity:
+      name: "Main Bedroom Humidity"
+    battery_level:
+      name: "Main Bedroom Battery Level"
+    battery_voltage:
+      name: "Main Bedroom Battery-Voltage"
+    signal_strength:
+      name: "Main Bedroom Signal"
+
+  - platform: atc_mithermometer
+    mac_address: !secret atc_mithermometer_milas_bedroom_mac_address
+    temperature:
+      name: "Milas Bedroom Temperature"
+    humidity:
+      name: "Milas Bedroom Humidity"
+    battery_level:
+      name: "Milas Bedroom Battery Level"
+    battery_voltage:
+      name: "Milas Bedroom Battery-Voltage"
+    signal_strength:
+      name: "Milas Bedroom Signal"
+
+  - platform: atc_mithermometer
+    mac_address: !secret atc_mithermometer_amys_bedroom_mac_address
+    temperature:
+      name: "Amys Bedroom Temperature"
+    humidity:
+      name: "Amys Bedroom Humidity"
+    battery_level:
+      name: "Amys Bedroom Battery Level"
+    battery_voltage:
+      name: "Amys Bedroom Battery-Voltage"
+    signal_strength:
+      name: "Amys Bedroom Signal"
+
+  - platform: atc_mithermometer
+    mac_address: !secret atc_mithermometer_main_bathroom_mac_address
+    temperature:
+      name: "Main Bathroom Temperature"
+    humidity:
+      name: "Main Bathroom Humidity"
+    battery_level:
+      name: "Main Bathroom Battery Level"
+    battery_voltage:
+      name: "Main Bathroom Battery-Voltage"
+    signal_strength:
+      name: "Main Bathroom Signal"
+
+  - platform: atc_mithermometer
+    mac_address: !secret atc_mithermometer_hallway_upstairs_mac_address
+    temperature:
+      name: "Hallway Upstairs Temperature"
+    humidity:
+      name: "Hallway Upstairs Humidity"
+    battery_level:
+      name: "Hallway Upstairs Battery Level"
+    battery_voltage:
+      name: "Hallway Upstairs Battery-Voltage"
+    signal_strength:
+      name: "Hallway Upstairs Signal"
+
+  - platform: internal_temperature
+    name: "ESP32 Upstairs 01 Internal Temperature"
+
+binary_sensor:
+  - platform: xiaomi_mjyd02yla
+    name: "Night Light Upstairs"
+    mac_address: !secret nightlight_upstairs_mac_address
+    bindkey: !secret nightlight_upstairs_bindkey
+    idle_time:
+      name: "Night Light Upstairs Idle Time"
+    light:
+      name: "Night Light Upstairs Light Status"
+    battery_level:
+      name: "Night Light Upstairs Battery Level"
+    illuminance:
+      name: "Night Light Upstairs Illuminance"

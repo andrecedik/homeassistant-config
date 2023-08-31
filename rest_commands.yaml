@@ -1,0 +1,12 @@
+clockwise_matrix_change_brightness:
+  url: http://10.10.10.212/set?displayBright={{ states.input_number.clockwise_matrix_brightness.state | int }}
+  method: POST
+  headers:
+    accept: "application/json, text/html"
+  content_type: "application/json; charset=utf-8"
+clockwise_matrix_turn_off:
+  url: http://10.10.10.212/set?displayBright=0
+  method: POST
+  headers:
+    accept: "application/json, text/html"
+  content_type: "application/json; charset=utf-8"

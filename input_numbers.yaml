@@ -1,0 +1,7 @@
+clockwise_matrix_brightness:
+  name: Clockwise Matrix Brightness
+  initial: 0
+  min: 0
+  max: 255
+  step: 1
+  icon: mdi:brightness-7

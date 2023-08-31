@@ -1,0 +1,9 @@
+[
+  {
+    "id": "8b1f24c9.7fb888",
+    "type": "server",
+    "z": "",
+    "name": "Home Assistant",
+    "addon": true
+  }
+]
