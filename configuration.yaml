@@ -8,6 +8,8 @@ frontend:
 automation: !include automations.yaml
 input_boolean: !include input_booleans.yaml
 input_number: !include input_numbers.yaml
+irrigation_unlimited: !include irrigation.yaml
+mqtt: !include mqtt.yaml
 rest_command: !include rest_commands.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml

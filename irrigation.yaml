@@ -1,0 +1,29 @@
+controllers:
+  zones:
+    - name: "Sprinkler Zone 1 (Hecke)"
+      entity_id: "switch.sprinkler_zone_1_hecke"
+    - name: "Sprinkler Zone 2"
+      entity_id: "switch.sprinkler_zone_2"
+    - name: "Sprinkler Zone 3"
+      entity_id: "switch.sprinkler_zone_3"
+    - name: "Sprinkler Zone 3"
+      entity_id: "switch.sprinkler_zone_4"
+  sequences:
+    - duration: "00:05"
+      delay: "00:01"
+      repeat: 5
+      schedules:
+        - time: "04:30"
+      zones:
+        - zone_id: 2
+        - zone_id: 3
+        - zone_id: 4
+    - duration: "00:05"
+      delay: "00:01"
+      repeat: 3
+      schedules:
+        - time: "20:30"
+      zones:
+        - zone_id: 2
+        - zone_id: 3
+        - zone_id: 4
