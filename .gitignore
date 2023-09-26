@@ -7,6 +7,14 @@ secrets.yaml
 *.log
 *.log.*
 
+# Logs
+logs
+*.log
+
+# Python cache
+__pycache__
+*.pyc
+
 # ZHA
 /zigbee.*
 
@@ -21,3 +29,4 @@ secrets.yaml
 /image/*
 
 #custom_components/
+custom_components/hacs
